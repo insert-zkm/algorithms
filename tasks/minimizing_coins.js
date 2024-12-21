@@ -1,4 +1,3 @@
-const { Test } = require("./utils");
 const FILE_NAME = __filename.slice(__dirname.length + 1, -3);
 
 /**
@@ -17,6 +16,21 @@ function solution(target_sum, coins) {
     return isFinite(table[target_sum]) ? table[target_sum] : -1;
 }
 
+function solution_mod(target_sum, coins) {
+    const table = [0];
+    for(let i = 1; i <=target_sum; i++) {
+        table.push(Infinity);
+        coins.forEach((c) => {
+            if(i - c >= 0 && table[i] > table[i - c] + 1) {
+                table[i] = table[i - c] + 1;
+            }
+        });
+    }
+    return isFinite(table[table.length - 1]) ? table[table.length - 1] : -1;
+}
+
+// solution_mod(11, [1, 5, 7]);
+
 function parse_in(rawStr) {
     const lines = rawStr.split('\n').map((ln) => ln.trim());
     const target_sum = Number(lines[0].split(' ').pop());
@@ -27,5 +41,8 @@ function parse_out(rawStr) {
     return Number(rawStr);
 }
 
-const ts = new Test(solution, FILE_NAME, parse_in, parse_out);
-ts.runAllTests();
+module.exports = {
+    solution,
+    parseIn: parse_in,
+    parseOut: parse_out
+}

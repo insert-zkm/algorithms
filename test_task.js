@@ -11,6 +11,5 @@ if(path_obj.ext !== '.js') {
 
 
 const task = require(resolve(process.argv[1], join(BASE, norm[0])));
-
 const t1 = new Test(task.solution, path_obj.name, task.parseIn, task.parseOut);
 t1.runAllTests();

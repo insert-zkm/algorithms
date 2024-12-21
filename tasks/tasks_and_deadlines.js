@@ -1,5 +1,3 @@
-const {Test} = require('./utils.js');
-
 /** 
  * https://cses.fi/problemset/task/1630
  * @param {[number, number][]} dds - tuple of durations and deadline 
@@ -26,13 +24,8 @@ function parse_in(rawStr) {
     return [dds];
 }
 
-const test = new Test(
+module.exports = {
     solution,
-    __filename.slice(__dirname.length + 1, -3), 
-    parse_in,
-    (data) => {
-        return Number(data);
-    }
-);
-
-test.runAllTests();
+    parseIn: parse_in,
+    parseOut: (raw) => (Number(raw))
+}

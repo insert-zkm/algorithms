@@ -1,5 +1,5 @@
-const { Test } = require("./utils");
 const FILE_NAME = __filename.slice(__dirname.length + 1, -3);
+
 /**
  * https://cses.fi/problemset/task/1620
  * @param {BigInt} total_products 
@@ -46,6 +46,8 @@ function parse_out(rawStr) {
     return BigInt(rawStr);
 }
 
-const ts2 = new Test(solution_v2, FILE_NAME, parse_in, parse_out);
-
-ts2.runAllTests();
+module.exports = {
+    solution: solution_v2,
+    parseIn: parse_in,
+    parseOut: parse_out
+}
