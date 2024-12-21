@@ -1,0 +1,16 @@
+{
+  "name": "laaksonen",
+  "version": "0.0.0",
+  "description": "Algorithms from Laaksonen's book of Competetive proggramming with test cases from CSES.FI",
+  "main": "factory_machines.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "laaksonen",
+    "algorithms",
+    "competitive_proggramming"
+  ],
+  "author": "zariqq",
+  "license": "MIT"
+}
